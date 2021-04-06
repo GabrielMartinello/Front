@@ -1,0 +1,19 @@
+<h4 class="text-center"> Cadastro de Usuarios!</h4>
+
+<form [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
+    <div class="form-group">
+        <input formControlName="idUsuario" placeholder="idUsuario" class="form-control" autofocus >
+    </div>
+
+    <div class="form-group">
+        <input formControlName="nome" placeholder="nome" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <input formControlName="senha" type="password" placeholder="senha" class="form-control">
+    </div>
+
+    <button class="btn btn-primary btn-block">Cadastrar</button>
+
+    <p>Já é um usuário?<a [routerLink]="['']">Entrar!</a></p>
+</form>
