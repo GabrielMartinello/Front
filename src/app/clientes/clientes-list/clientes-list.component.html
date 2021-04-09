@@ -1,0 +1,44 @@
+<h1>Lista de Clientes</h1>
+
+<div class="g-right">
+  <button (click)="deslogar()" class="btn btn-outline-danger g-btn" >
+    <i class="fa fa-sign-out"></i>
+  </button>
+</div>
+
+<div class="g-tablecenter">
+<table class="table caption-top">
+    <caption>Lista de Clientes</caption>
+    <thead>
+      <tr>
+        <th class="g-th" scope="col">ID</th>
+        <th class="g-th" scope="col">NOME</th>
+        <th class="g-th" scope="col">TELEFONE</th>
+        <th class="g-th" scope="col">CNPJF</th>
+        <th class="g-th" scope="col">TIPOPESSOA</th>
+        <th class="g-th" scope="col">EDITAR/EXCLUIR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes; let i = index">
+        <td>{{cliente.id}}</td>
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.telefone | mask: '(00) 00000-0000'}}</td>
+        <td>{{cliente.cnpjf | mask: '000.000.000-00'}}</td>
+        <td>{{cliente.tipoPessoa}}</td>
+        <td>
+            <button class="btn btn-outline-warning ml-2" (click)="editarCliente(cliente)"><i class="fa fa-pencil"></i></button>
+            <button class="btn btn-outline-danger ml-2" (click)="deletar(i, cliente)"><i class="fa fa-trash"></i></button>
+        </td>
+      </tr> 
+    </tbody>
+  </table>
+</div>
+
+<div class="g-right">
+    <button (click)="cadastrar()" class="btn btn-outline-primary g-btn" >
+        <span class="v-txtpad">cadastrar</span>
+    </button>
+</div>
+
+

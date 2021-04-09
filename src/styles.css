@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+h1, h2 {
+    color: #039be5;
+    text-align: center;
+    margin-bottom: 20px !important;
+}
+
+.g-right {
+    text-align: right;
+}
+
+.g-left {
+    text-align: left;
+}
+
+.g-txtpad {
+    text-transform: uppercase; 
+    text-overflow: ellipsis;
+}
+
+.g-btn {
+    margin-right: 40px;
+}
+
+.g-tablecenter {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+
+}
+
+.g-th {
+    color: #fafafa;
+}
+
+th {
+    background-color: #039be5!important;
+}
+
+th:first-child{
+    border-left: 2px solid #fafafa !important;
+}
+
+th:last-child {
+    border-right: 2px solid #fafafa !important;
+}

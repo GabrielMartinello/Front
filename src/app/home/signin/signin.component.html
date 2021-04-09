@@ -1,0 +1,18 @@
+<h4 class="text-center">Login!</h4>
+
+<form [formGroup]="loginForm" class="form mt-4" (submit) = "login()">
+    <div class="form-group">
+        <input formControlName="idUsuario" placeholder="idUsuario" class="form-control" autofocus >
+    </div>
+
+    <div class="form-group">
+        <input formControlName="senha" type="password" placeholder="senha" class="form-control">
+    </div>
+
+    
+    <div style="margin-top: 8px">
+        <button type="submit" class="btn btn-outline-primary btn-block">
+           Entrar
+        </button>
+        <p>Ainda não tem uma conta? Acesse este Link <a [routerLink]="['/usuario/cadastrar']">Cadastrar!</a></p>
+      </div>

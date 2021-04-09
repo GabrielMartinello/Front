@@ -1,0 +1,52 @@
+<h4 class="text-center"> Cadastro de Endereco!</h4>
+
+<form [formGroup]="enderecoForm" class="form mt-4"  >
+
+    <div *ngIf="endereco.id" class="form-group"> 
+        <input type="text" formControlName="id" placeholder="Tipo do Endereco" class="form-control" readonly>
+    </div>
+
+    <div *ngIf="endereco.idCliente" class="form-group"> 
+        <input type="text" formControlName="idCliente" placeholder="Id cliente" class="form-control" readonly>
+    </div>
+
+
+    <div class="form-group"> 
+        <input type="text" formControlName="tipoEndereco" placeholder="Tipo do Endereco" class="form-control">
+    </div>
+
+    <div class="form-group"> 
+        <input type="text" formControlName="rua" placeholder="Rua" class="form-control">
+    </div>
+
+    <div class="form-group"> 
+        <input type="text" formControlName="bairro" placeholder="Bairro" class="form-control">
+    </div>
+
+    <div class="form-group"> 
+        <input mask="000.000.000.00" formControlName="cep" id="cep" placeholder="CEP" class="form-control">
+    </div>
+
+    <div class="form-group"> 
+        <input type="text" formControlName="cidade" placeholder="Cidade" class="form-control">
+    </div>
+
+    <div class="form-group"> 
+        <input type="text" formControlName="uf" placeholder="UF" class="form-control">
+    </div>
+
+    <div class="form-group"> 
+        <input (click)="cadastrar()" formControlName="numero" placeholder="Numero" class="form-control">
+    </div>
+    
+    <div *ngIf="!endereco.id" style="margin-top: 8px">
+        <button type="submit" class="btn btn-outline-primary btn-block" >
+            Salvar
+        </button>
+    </div>
+
+   
+    <div *ngIf="endereco.id" style="margin-top: 8px">
+        <button (click)="alterarEndereco()" class="btn btn-outline-warning btn-block">Editar</button>
+    </div>
+</form>

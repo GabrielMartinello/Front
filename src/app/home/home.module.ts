@@ -3,18 +3,19 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { VMessageModule } from "../components/vmessage/vmessage.module";
 import { SignupComponent } from "./signup/signup.component";
+import { SigninComponent } from './signin/signin.component';
+import { VMessageModule } from "../components/vmessage/vmessage.module";
 
 @NgModule({
-    declarations: [SignupComponent],
+    declarations: [SignupComponent, SigninComponent],
     imports: [
         CommonModule,   
         RouterModule,
         FormsModule,
         ReactiveFormsModule,
-        VMessageModule,
-        HttpClientModule
+        HttpClientModule,
+        VMessageModule
     ]
 })
 export class HomeModule {

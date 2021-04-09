@@ -1,8 +1,10 @@
-<h4 class="text-center"> Cadastro de Usuarios!</h4>
+<h4 *ngIf="!newUser.idUsuario" class="text-center"> Cadastro de Usuarios!</h4>
+<h4 *ngIf="newUser.idUsuario" class="text-center">Editar Usuario</h4>
 
 <form [formGroup]="signupForm" class="form mt-4" (submit)="signup()">
     <div class="form-group">
-        <input formControlName="idUsuario" placeholder="idUsuario" class="form-control" autofocus >
+        <input *ngIf="newUser.idUsuario" formControlName="idUsuario" placeholder="idUsuario" class="form-control" autofocus readonly>
+        <input *ngIf="!newUser.idUsuario" formControlName="idUsuario" placeholder="idUsuario" class="form-control" autofocus>
     </div>
 
     <div class="form-group">
@@ -13,7 +15,14 @@
         <input formControlName="senha" type="password" placeholder="senha" class="form-control">
     </div>
 
-    <button class="btn btn-primary btn-block">Cadastrar</button>
-
-    <p>Já é um usuário?<a [routerLink]="['']">Entrar!</a></p>
+    
+    <div style="margin-top: 8px">
+        <button *ngIf="!newUser.idUsuario" type="submit" class="btn btn-outline-primary btn-block">
+            Cadastrar
+        </button>
+        <button *ngIf="newUser.idUsuario" type="submit" class="btn btn-outline-primary btn-block">
+            Editar
+        </button>
+    </div>
+    <p>Já é um usuário?<a [routerLink]="['/usuario/login']">Entrar!</a></p>
 </form>

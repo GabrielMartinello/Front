@@ -1,10 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { VMessageModule } from './components/vmessage/vmessage.module';
+
+
+import { ClientesModule } from './clientes/clientes.module';
+import { ErrorsModule } from './errors/errors.module';
 import { HomeModule } from './home/home.module';
+import { EnderecosModule } from './enderecos/enderecos.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +16,10 @@ import { HomeModule } from './home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    ErrorsModule,
+    ClientesModule,
+    EnderecosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
